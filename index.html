@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hessellund IT ApS</title>
+<meta name="description" content="Hessellund IT ApS is a Danish company offering freelance software development and technical consulting, based in Aarhus.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EDF0F1;
+    --ink: #17252D;
+    --muted: #56656D;
+    --rule: #C6CFD3;
+    --grove: #2D5D4D;
+    --grove-hover: #1E4236;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #111B20;
+      --ink: #E3E9EB;
+      --muted: #98A7AD;
+      --rule: #2A3840;
+      --grove: #8CC3AE;
+      --grove-hover: #B4DCCB;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--grove); text-underline-offset: 0.18em; }
+  a:hover { color: var(--grove-hover); }
+  a:focus-visible { outline: 3px solid var(--grove); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-inline: clamp(1rem, 5vw, 4rem);
+  }
+
+  /* Header */
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.75rem;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .brand svg { width: 1.6rem; height: 1.6rem; color: var(--grove); flex: none; }
+  .brand:hover { color: var(--ink); }
+  .top-contact { font-size: 1rem; }
+
+  /* Hero */
+  .hero { padding-block: clamp(3.5rem, 11vw, 8.5rem) clamp(3rem, 8vw, 6rem); }
+  .hero h1 {
+    margin: 0;
+    max-width: 15ch;
+    font-size: clamp(2.5rem, 7.4vw, 5.6rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  .lead {
+    margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+    max-width: 50ch;
+    font-size: clamp(1.15rem, 2vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  /* Sections */
+  .row {
+    border-top: 1px solid var(--rule);
+    padding-block: clamp(2.25rem, 5vw, 3.5rem);
+  }
+  .row h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  @media (min-width: 52rem) {
+    .row {
+      display: grid;
+      grid-template-columns: 14rem 1fr;
+      gap: 2rem;
+    }
+    .row h2 { margin: 0; padding-top: 0.15rem; }
+  }
+
+  .services { margin: 0; }
+  .services > div + div { margin-top: 1.75rem; }
+  .services dt {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .services dd { margin: 0.4rem 0 0; max-width: 58ch; color: var(--muted); }
+
+  .contact p { margin: 0 0 0.75rem; max-width: 52ch; }
+  .email {
+    display: inline-block;
+    font-size: clamp(1.35rem, 4.4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-decoration-thickness: 2px;
+    overflow-wrap: anywhere;
+  }
+
+  .facts { margin: 0; }
+  .facts > div {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 1rem;
+    padding-block: 0.35rem;
+  }
+  .facts dt { color: var(--muted); }
+  .facts dd { margin: 0; }
+
+  /* Footer */
+  .foot {
+    padding-bottom: 2.5rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .foot p {
+    margin: 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: 40rem) {
+    .top-contact { display: none; }
+  }
+</style>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="/" aria-label="Hessellund IT, home">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+        <rect x="3" y="9" width="4.5" height="12" rx="2.25"/>
+        <rect x="9.75" y="3" width="4.5" height="18" rx="2.25"/>
+        <rect x="16.5" y="11" width="4.5" height="10" rx="2.25"/>
+      </svg>
+      Hessellund IT
+    </a>
+    <a class="top-contact" href="mailto:anders@hessellund-it.dk">anders@hessellund-it.dk</a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Freelance software development and technical consulting.</h1>
+      <p class="lead">Hessellund IT is the consulting company of Anders Hessellund Jensen, a software developer based in Aarhus, Denmark. I work with companies on building new software and on improving the systems they already run.</p>
+    </section>
+
+    <section class="row" aria-labelledby="work-heading">
+      <h2 id="work-heading">What I do</h2>
+      <dl class="services">
+        <div>
+          <dt>Software development</dt>
+          <dd>Designing and building web applications, backend services and apps, from the first version to running in production.</dd>
+        </div>
+        <div>
+          <dt>Technical consulting</dt>
+          <dd>Architecture reviews, technology choices and a second opinion on difficult technical decisions.</dd>
+        </div>
+        <div>
+          <dt>Joining your team</dt>
+          <dd>Working inside an existing team for a period to deliver a defined piece of work.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="row contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <div>
+        <p>Email is the best way to reach me about a project or an engagement.</p>
+        <a class="email" href="mailto:anders@hessellund-it.dk">anders@hessellund-it.dk</a>
+      </div>
+    </section>
+
+    <section class="row" aria-labelledby="company-heading">
+      <h2 id="company-heading">Company details</h2>
+      <dl class="facts">
+        <div><dt>Name</dt><dd>Hessellund IT ApS</dd></div>
+        <div><dt>CVR</dt><dd>42026530</dd></div>
+        <div><dt>Address</dt><dd>Højvangsvej 13<br>8260 Viby J<br>Denmark</dd></div>
+        <div><dt>Founded</dt><dd>2021</dd></div>
+        <div><dt>Director</dt><dd>Anders Hessellund Jensen</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>© Hessellund IT ApS, CVR 42026530</p>
+  </footer>
+</body>
+</html>
